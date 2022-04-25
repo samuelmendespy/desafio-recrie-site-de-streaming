@@ -1,6 +1,6 @@
 :root{
-    --vermelho:#E50914;
-    --preta:#141414;
+    --branco:#ffffff;
+    --azul:#00008B;
 }
 *{
     margin:0;
@@ -10,13 +10,17 @@
 
 /* Código CSS dos elementos base */
 body {
-    background-color:var(--preta);
+    background-color:var(--azul);
     font-family: 'Arial', Times, serif;
     color:white;
 }
 
+/* Desativar barra de rolagem
+body::-webkit-scrollbar {
+    display: none;
+} */
+
 header .container{
-    /* border: 1px solid black; */
 display: flex;
 flex-direction: row;
 align-items: center;
@@ -25,20 +29,27 @@ justify-content: space-between;
 
 header .logo{
     margin-left: 6px;
-    color: var(--vermelho);
+    color: var(--branco);
     font-family: 'Arial Black', Times;
     font-size: 40px;
 }
 
 header nav a{
     text-decoration: none;
-    color: #aaa;
+    color:rgb(238, 238, 238);
     margin-right: 10px;
 }
  
 header nav a:hover{
-    color: #fff;
+    color:var(--azul);
+    font-size: 110%;
+    background-color: var(--branco);
 
+}
+
+/* Seção do cabeçalho com logo */
+.logo:hover{
+    transform: scale(0.9);
 }
 
 /* Exibição do Filme principal */
@@ -68,7 +79,7 @@ header nav a:hover{
 }
 
 .botao{
-    background-color:rgba(0, 0, 0, .50);
+    background-color:rgba(0, 0, 139, .50);
     border:none;
     color: white;
 
@@ -84,28 +95,86 @@ header nav a:hover{
 }
 
 .botao:hover{
-    background-color: white;
-    color: black;
+    background-color: var(--branco);
+    color: var(--azul);
 }
 
 
 .container{
     margin-left: 20px;
+    position: relative;
     
 }
 
 .filme-principal .container{
     width: 70%;
-   
-}
-
-
-.box-filme{
-    height: 100%;
-    width: 100%;
-    display: block;
+    
 }
 
 .carousel-filme{
     margin-top: 5px;
+}
+
+.box-filme{
+    
+    
+    /* Cursor alterado para acilitar navegação e UX  */
+    cursor: pointer;
+    
+    /* Define posição para ocultar texto com z index */
+    /* position: relative; */
+    
+    /* Definições para criar efeito de imagem jogada ao fundo */
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.box-filme:hover{
+
+filter: brightness(60%);
+    /* Configura baixo brilho para dar escurecer a miniatura e facilitar leitura de texto sobreposto */
+
+}
+
+.min-title{
+    width: 100%;
+    
+    padding: 10px 0;
+
+    /* Definições de aparência do texto */
+    color:rgb(255, 238, 6);
+    font-size: 16px;
+    font-weight: bold;
+    
+    /* Definições para efeito de sobreposição */
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0,0,0,.70);
+}
+
+
+.min-title:hover{
+opacity: 1;
+}
+
+
+/* Adição para inserir texto em imagem ao passar o mouse */
+.box-filme:hover + .min-title{
+    opacity: 1;
+}
+
+
+/* Botoes-min - Área de botões que surge dentro da miniatura */
+.botao.minbtn{
+    margin-bottom: 5px;
 }
