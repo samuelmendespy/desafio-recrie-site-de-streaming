@@ -8,7 +8,7 @@ Repositório para minha produção no Desafio Recriando a Interface do Netflix d
 - [Ícone Play - Font Awesome](https://fontawesome.com/icons/play?s=solid)
 - [Ícone Info Circular - Font Awesome](https://fontawesome.com/icons/circle-info?s=solid)
 - [Ícone Book - Font Awesome](https://fontawesome.com/icons/book?s=solid)
-- [Ilustração de favicon e Logo @pysmendes´] (https://github.com/pysmendes) 
+- [Ilustração de favicon e Logo @pysmendes](https://github.com/pysmendes) 
 
 ## Customizações
 - **Estilização do tema com 2 cores principais Azul e Branco**
